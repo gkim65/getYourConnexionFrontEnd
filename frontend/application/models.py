@@ -13,7 +13,7 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
-
+# Model for the personal form
 class PersonalModel(models.Model):
     username = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,)
     first_Name = models.CharField(max_length=100)
@@ -26,6 +26,7 @@ class PersonalModel(models.Model):
     state_Abb = models.CharField(max_length=2)
     zipCode = models.DecimalField(max_digits=6, decimal_places=0)
 
+# Model for the income responses of the application
 class IncomeModel(models.Model):
     username = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,)
     Have_a_W2 = models.BooleanField()

@@ -7,6 +7,7 @@ from . import views
 # Need to specify my urls to be used within this project
 urlpatterns = [
     path('', views.index, name='index'),
+    # Multiple page one form is for questions:
     path('Questions/', ContactWizard.as_view([PersonalForm, IncomeForm]), name="intros"),
     path('submit/', views.submitPage, name='submitPage'),
 ]

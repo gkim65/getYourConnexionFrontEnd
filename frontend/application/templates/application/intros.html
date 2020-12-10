@@ -1,17 +1,23 @@
 {% extends "application/layout.html" %}
 
 {% block body %}
+<!--This is where we have the multiple page forms come out; had to do lots of python logic to make this work out-->
 <div class="question">
+    <!--Choose specific title based on which page we were on-->>
     {% if wizard.steps.step1 == 1 %}
         <h4>Personal Questions</h4>
     {% else %}
         <h4>Income/Family Questions</h4>
     {% endif %}
     <h4>Page {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</h4> 
+
+    <!--Container for the actual questions of the forms-->
     <body class="verticalContainer">
         <form method="post" action = "">
             <table >
+                <!--Always need the token to make sure we are able to sign in-->
                 {% csrf_token %}
+                <!--Use the wizard.management_form for the multiple page form system-->
                 {{ wizard.management_form }}
                 {% if wizard.form.forms %}
                     {{ wizard.form.management_form }}
@@ -23,8 +29,9 @@
                 {% endif %}
             </table>
             <div class="buttonContainer">
-                {% if wizard.steps.prev %}
 
+                <!--Add an extra button to return back to previous page if you're on last page of the form-->
+                {% if wizard.steps.prev %}
                     <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">prev step</button>
                 {% endif %}
                 <button class="register" type="submit"> 

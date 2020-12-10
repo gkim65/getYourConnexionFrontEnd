@@ -1,5 +1,6 @@
 from django import forms
 
+# Forms that we used for the multiple page forms for personal information and income information
 class PersonalForm(forms.Form):
     first_Name = forms.CharField(max_length=100)
     last_Name = forms.CharField(max_length=100)
@@ -11,6 +12,7 @@ class PersonalForm(forms.Form):
     state_Abb = forms.CharField(max_length=2)
     zipCode = forms.DecimalField(max_digits=6)
 
+# Forms choices for the Income section of the application
 DEMO_CHOICES =( 
     ("1", "Below $30,000"), 
     ("2", "$30,000 - $60,000"), 

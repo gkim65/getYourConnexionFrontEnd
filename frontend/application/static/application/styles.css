@@ -4,11 +4,11 @@ body {
     font-style: normal;
 
 }
+
 /*Set up font sizes*/
 h1 {
     font-size: 5.9vw;
 }
-
 h2 {
     font-size: 4vw;
 }
@@ -21,7 +21,8 @@ h4 {
 h5 {
     font-size: 18px;
 }
-/*Extra Programs*/
+
+/*Text for extra program styles*/
 .extraPrograms {
     display:flex;
     justify-content: space-between;
@@ -30,6 +31,8 @@ h5 {
     font-size: 22px;
     text-align: center;
 }
+
+/*Button styles*/
 .buttonContainer {
     padding:20px;
     display: flex;
@@ -46,6 +49,7 @@ button {
     font-size: 20px;
 }
 
+/*Style for applicaiton form*/
 form {
     display: flex;
     flex-direction: column;
@@ -53,6 +57,7 @@ form {
     align-items: center;
     height:100%;
 }
+
 /*Just needed a vertical container*/
 .verticalContainer {
     color: #FFF;

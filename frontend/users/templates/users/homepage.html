@@ -2,15 +2,19 @@
 {% load static %}
 
 {% block body %}
-<!-- This is the first page that the user should enter whenever they come to this website -->
+<!-- First page that user comes to when they are logged in -->
 <div class=getYourConnexion style="background-color: #D8EEFF;">
     <div class=titleText>
         <h2 style="color:#14477E"><span style="color:#FBA66B;outline-color: #14477E;">{{user.username}}</span>'s Dashboard</h2>
     </div>
     <div class="dashboard">
+
+        <!--Two side panels, where first one discusses which rebate programs the user is eligible for-->
         <div class="homepage">
             <h4>You are eligible for the following programs:</h4>
             <h5> Click these buttons to proceed to the application/online page hosted by the city!</h5>
+
+            <!--Use the income level that they have before and calculate what programs they should be elligible for-->
             {% if income == "['1']" %}
                 <button class="morePrograms" onclick="location.href='https://www.fcgov.com/rebate/#:~:text=The%20rebate%20program%20runs%20from,%2C%20age%2C%20and%20disability%20status.'"> Grocery Rebate Program </button>
                 <button class="morePrograms" onclick="location.href='https://www.fcgov.com/utilities/manage-your-account/payment-options/utilities-affordability-portfolio/'"> Utilities Program </button>
@@ -22,9 +26,12 @@
             {% elif income == "['3']" %}
                 <button class="morePrograms" onclick="location.href='https://www.fcgov.com/rebate/#:~:text=The%20rebate%20program%20runs%20from,%2C%20age%2C%20and%20disability%20status.'"> Grocery Rebate Program </button>
             {% else %}
+            <!--Sometimes cases when people skip the application seciton of the website, not sure how to get around this-->
                 <h5> Unfortunately, you are not qualified for any additional programs.</h5>
             {% endif %}
         </div>
+        
+        <!--Other side panel with logo for fort collins connexion-->
         <div class="homepage">
             <img src="{% static 'users/images/logo-ft-collins-connexion.png' %}" alt="City of Fort Collins" width=65% style="display:block; margin-left: auto;margin-right: auto; ">
         </div>

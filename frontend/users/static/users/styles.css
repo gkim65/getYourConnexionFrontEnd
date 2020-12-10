@@ -47,6 +47,8 @@ h5 {
     text-align: center;
     padding:3%;
 }
+
+/*Button stuff*/
 .buttonContainer {
     display: flex;
     justify-content: space-between;
@@ -61,7 +63,7 @@ button {
     color: #14477E;
     font-size: 20px;
 }
-
+/*Pretty styles for our login forms*/
 .form-group{
     padding: 10px;
 }

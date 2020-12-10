@@ -8,10 +8,11 @@ from django.db import IntegrityError
 from application.models import IncomeModel
 
 
-
+# first index page we come into
 def index(request):
     return render(request, 'users/index.html',)
 
+# Try to login!!!
 def login_view(request):
     if request.method == "POST":
         # Try to log in user
@@ -40,11 +41,13 @@ def login_view(request):
     else:
         return render(request, "users/login.html",{})
 
+# Logout
 def logout_view(request):
     # Easy Django library to help out with logging out
     logout(request)
     return HttpResponseRedirect(reverse("users:index"))
 
+# Register
 def register(request):
     if request.method == "POST":
         username = request.POST["username"]
@@ -72,6 +75,7 @@ def register(request):
             })
         # If user was successfully created, log them in and then go to application:index for income qualifying questions
         login(request,user)
+        # Also save income information so website doesn't get stuck if they somehow skip application section
         i = IncomeModel(
         username = request.user,
         Have_a_W2 = False,
@@ -86,7 +90,9 @@ def register(request):
     else:
         return render(request, "users/register.html",{})
 
+# homepage/dashboard for user
 def homepage(request):
+    # Check if user is authenticated so we can check their income 
     if request.user.is_authenticated:
         user = request.user
         income = IncomeModel.objects.filter(username=user).last()
@@ -94,8 +100,10 @@ def homepage(request):
     else:
         return HttpResponseRedirect(reverse("users:login"))
 
+# Contact us page
 def contact(request):
     return render(request, "users/contact.html")
 
+# About us Page
 def about(request):
     return render(request, "users/about.html")

@@ -20,8 +20,11 @@ from users import views
 
 # Make sure to include url views to the other parts of my site
 urlpatterns = [
+    # Admin site nice for models
     path('admin/', admin.site.urls),
+    # For the no slash, I just put the users index file to be first
     path('', views.index, name='index'),
+    # import all the urls for application and user apps
     path('application/', include(('application.urls', 'application'), namespace='application')),
     path('users/', include(('users.urls', 'users'),namespace='users')),
 ]

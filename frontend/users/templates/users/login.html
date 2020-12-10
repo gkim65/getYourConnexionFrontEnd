@@ -1,6 +1,7 @@
 {% extends "users/layout.html" %}
 
 {% block body %}
+<!--Login Page for GetyourConnexion-->
 <div class="getYourConnexion">
     <h2>Login</h2>
 
@@ -8,6 +9,7 @@
         <div>{{ message }}</div>
     {% endif %}
 
+    <!--Login fields-->
     <form action="{% url 'users:login' %}" method="post" class="verticalContainer">
         {% csrf_token %}
         <div class="form-group">
@@ -19,6 +21,7 @@
         <button class="login" type="submit"><strong>Login</strong></button>
     </form>
 
+    <!--Can go back to registration page if they don't have an account-->
     <div class="verticalContainer" style= "margin-bottom:3%">
         <p>Don't have an account?</p>
         <button class=register onclick="location.href='{% url 'users:register' %}'"><strong>Register Here</strong></button>

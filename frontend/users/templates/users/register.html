@@ -1,13 +1,16 @@
 {% extends "users/layout.html" %}
 
 {% block body %}
+<!--Registration page for getYourConnexion-->
     <div class="getYourConnexion">
         <h2>Register</h2>
-
+        
+        <!--Message if the user messed up something-->
         {% if message %}
             <div>{{ message }}</div>
         {% endif %}
         
+        <!--Forms for registration-->
         <form action="{% url 'users:register' %}" method="post" class="verticalContainer">
             {% csrf_token %}
             <div class="form-group">
@@ -25,6 +28,7 @@
             <button class="login" type="submit"><strong>Register</strong></button> 
         </form>
 
+        <!--maybe it turns out they already had an account!-->
         <div class="verticalContainer" style= "margin-bottom:3%">
             <p>Already have an account?</p>
             <button class=register onclick="location.href='{% url 'users:login' %}'"><strong>Login Here</strong></button>

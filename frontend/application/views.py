@@ -33,6 +33,7 @@ def process_form_data(form_list,self):
     zipCode = form_data[0]['zipCode'])
     p.save()
 
+    # Save income model information as well
     i = IncomeModel(
     username = self.request.user,
     Have_a_W2 = form_data[1]['Have_a_W2'],
@@ -45,5 +46,6 @@ def process_form_data(form_list,self):
 def index(request):
      return render(request, 'application/index.html',)
 
+# Final submission page
 def submitPage(request):
     return render(request, 'application/submitPage.html',)
