@@ -1,0 +1,42 @@
+{% extends "application/layout.html" %}
+
+{% block body %}
+<div class="question">
+    {% if wizard.steps.step1 == 1 %}
+        <h4>Personal Questions</h4>
+    {% else %}
+        <h4>Income/Family Questions</h4>
+    {% endif %}
+    <h4>Page {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</h4> 
+    <body class="verticalContainer">
+        <form method="post" action = "">
+            <table >
+                {% csrf_token %}
+                {{ wizard.management_form }}
+                {% if wizard.form.forms %}
+                    {{ wizard.form.management_form }}
+                    {% for form in wizard.form.forms %}
+                        {{ form }}
+                    {% endfor %}
+                {% else %}
+                    {{ wizard.form }}
+                {% endif %}
+            </table>
+            <div class="buttonContainer">
+                {% if wizard.steps.prev %}
+
+                    <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">prev step</button>
+                {% endif %}
+                <button class="register" type="submit"> 
+                    {% if wizard.steps.step1 == 1 %}
+                        Next
+                    {% else %}
+                        Submit
+                    {% endif %} </button>
+            </div>
+        </form>
+    </body>
+</div>
+
+{% endblock %}
+

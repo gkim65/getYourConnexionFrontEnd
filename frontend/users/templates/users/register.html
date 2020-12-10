@@ -1,0 +1,33 @@
+{% extends "users/layout.html" %}
+
+{% block body %}
+    <div class="getYourConnexion">
+        <h2>Register</h2>
+
+        {% if message %}
+            <div>{{ message }}</div>
+        {% endif %}
+        
+        <form action="{% url 'users:register' %}" method="post" class="verticalContainer">
+            {% csrf_token %}
+            <div class="form-group">
+                <input class="form-control" autofocus type="text" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
+            </div>
+            <button class="login" type="submit"><strong>Register</strong></button> 
+        </form>
+
+        <div class="verticalContainer" style= "margin-bottom:3%">
+            <p>Already have an account?</p>
+            <button class=register onclick="location.href='{% url 'users:login' %}'"><strong>Login Here</strong></button>
+        </div>
+    </div>
+{% endblock %}

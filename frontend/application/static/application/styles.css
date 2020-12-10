@@ -1,0 +1,142 @@
+/*Like the Raleway font*/
+body {
+    font-family: Raleway;
+    font-style: normal;
+
+}
+/*Set up font sizes*/
+h1 {
+    font-size: 5.9vw;
+}
+
+h2 {
+    font-size: 4vw;
+}
+h3 {
+    font-size: 3vw;
+}
+h4 {
+    font-size: 25px;
+}
+h5 {
+    font-size: 18px;
+}
+/*Extra Programs*/
+.extraPrograms {
+    display:flex;
+    justify-content: space-between;
+    width:50%;
+    color: #000;
+    font-size: 22px;
+    text-align: center;
+}
+.buttonContainer {
+    padding:20px;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-bottom: 10%;
+}
+button {
+    font-family: Raleway;
+    padding: 20px;
+    border-radius: 25px;
+    width: 200px;
+    color: #14477E;
+    font-size: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height:100%;
+}
+/*Just needed a vertical container*/
+.verticalContainer {
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin:auto;
+    align-content: stretch;
+}
+
+/*Need different colors for buttons on whenever someone needs to register or login*/
+.register{
+    background-color: #FFE4A9;
+}
+.login{
+    background-color:#D8EEFF;
+}
+
+/* Special button effects*/
+button:focus{
+    outline: none;
+    box-shadow: none;
+}
+button:hover {
+    background: #FFC298;
+    transition: 0.5s ease;
+}
+
+/*Question Format Containers*/
+.question{
+    background-color: white;
+    border-radius: 15px;
+    width: 500px;
+    color: black;
+    text-align: center;
+    justify-content: Center;
+    align-items: center;
+    align-content: center;
+    display:flex-end;
+    flex-direction: column;
+    flex-flow: wrap;
+    padding: 3vw 3vw;
+}
+
+/*Backgrounds for homepage*/
+.getYourConnexion{
+    background-color: #FFC298;
+    width: 100%;
+    color: #FFF;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.titleText {
+    margin-top: 10%;
+    line-height: 200%;
+
+}
+
+/*My footnotes bar*/
+#endcredits{
+    background-color: #FFE4A9;
+    width: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    /* or 133% */
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #000000;
+
+}
+
+li {
+    list-style-type: none;
+}
+ul {
+    padding-left: 0;
+}

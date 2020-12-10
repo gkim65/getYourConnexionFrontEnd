@@ -1,0 +1,43 @@
+{% extends "users/layout.html" %}
+
+{% block body %}
+    <!-- This is the first page that the user should enter whenever they come to this website -->
+    <div class=getYourConnexion>
+        <div class=titleText>
+            <h1>GetYourConnexion</h1>
+            <h2><span style="color:#FBA66B">Digital Equity</span> Application</h2>
+        </div>
+        <div class=buttonContainer>
+            <button class=register onclick="location.href='{% url 'users:register' %}'"><strong>First time applying?<br>
+                Start here:</strong></button>
+            <button class=login onclick="location.href='{% url 'users:login' %}'"><strong>Returning User?<br>
+                Welcome Back!</strong></button>
+        </div>
+    </div>
+    
+    <!-- Information about other programs-->
+    <div class=getYourConnexion style="background-color:#D8EEFF;">
+        <h3 style="color:#14477E">In this 10 minute application, you <br>
+            can also check if you are eligible <br>
+            for the following programs: </h3>
+        <div class=extraPrograms>
+            <p><strong>Grocery Rebates Program:</strong><br>
+                Reduce the cost of city <br>
+                living through reimbursements <br>
+                of average anual city taxes <br>
+                paid on groceries </p>
+            <p><strong>Utility Tax Rebate:</strong><br>
+                Reimbursements of average <br> monthly
+                consumption of relavent <br> city 
+                utility taxes (wastewater, <br>
+                water, electricity)</p>
+        </div>
+        <div class=extraPrograms>
+            <p> <strong> Rent/Property Tax Rebate: </strong> <br>
+                Partial reimbursements of
+                paid <br> property taxes or rental payments</p>
+            <p> <strong> And so much more! </strong><br>
+                7 more programs to be exact :D</p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <!--Get the various stylesheets I need like my fonts and CSS-->
+    <head>
+        <title>GetYourConnexion</title>
+        <link href="{% static 'users/styles.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+    </head>
+
+    <!--Template for body of most of my pages-->
+    <body style="margin:0">
+
+        <!--Navbar-->
+        <div id="full-nav">
+            <div style="width:20%">
+            <img src="{% static 'users/images/city-of-fort-collins-vector-logo.svg' %}" alt="City of Fort Collins" width=65% style="display:block; margin-left: auto;margin-right: auto; " >
+            </div>
+            <div id="nav">
+                <div id=triangle-topright></div>
+                <nav id="main-menu">
+                    <!-- Sample menu definition -->
+                        <ul class="navUl">
+                            {% if user.is_authenticated %}
+                                <li class="nav">
+                                    <a class="link" href="{% url 'users:homepage' %}">Home</a>
+                                </li>
+                                <li class="nav">
+                                    <a class="link" href="{% url 'users:logout' %}">Log Out</a>
+                                </li>
+                            {% else %}
+                                <li class="nav">
+                                    <a class="link" href="{% url 'users:login' %}">Log In</a>
+                                </li>
+                                <li class="nav">
+                                    <a class="link" href="{% url 'users:register' %}">Register</a>
+                                </li>
+                            {% endif %}
+                            <li class="nav"><a class="link" href="{% url 'users:contact' %}">Contact Us</a></li>
+                            <li class="nav"><a class="link" href="{% url 'users:about' %}">About Digital Equity</a></li>  
+                        </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!--Whatever I need in the other pages, I can enter it here-->
+        {% block body %}
+        {% endblock %}
+
+        <!--Have a small end credits tab at the very end of every screen-->
+        <div id=endcredits>
+            <p>Website Built and Maintained By:  <strong>Grace Kim </strong>
+            <br>
+            <strong>CS50 Final Project</strong></p>
+        </div>
+    </body>
+</html>

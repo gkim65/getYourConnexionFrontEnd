@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <!--Get the various stylesheets I need like my fonts and CSS-->
+    <head>
+        <title>GetYourConnexion</title>
+        <link href="{% static 'application/styles.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+    </head>
+
+    <!--Template for body of most of my pages-->
+    <body style="margin:0">
+        <div class="getYourConnexion">
+        <!--Whatever I need in the other pages, I can enter it here-->
+        {% block body %}
+        {% endblock %}
+        </div>
+        <!--Have a small end credits tab at the very end of every screen-->
+        <div id=endcredits>
+            <p>Website Built and Maintained By:  <strong>Grace Kim </strong>
+            <br>
+            <strong>CS50 Final Project</strong></p>
+        </div>
+    </body>
+</html>

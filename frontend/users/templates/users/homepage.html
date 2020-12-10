@@ -1,0 +1,34 @@
+{% extends "users/layout.html" %}
+{% load static %}
+
+{% block body %}
+<!-- This is the first page that the user should enter whenever they come to this website -->
+<div class=getYourConnexion style="background-color: #D8EEFF;">
+    <div class=titleText>
+        <h2 style="color:#14477E"><span style="color:#FBA66B;outline-color: #14477E;">{{user.username}}</span>'s Dashboard</h2>
+    </div>
+    <div class="dashboard">
+        <div class="homepage">
+            <h4>You are eligible for the following programs:</h4>
+            <h5> Click these buttons to proceed to the application/online page hosted by the city!</h5>
+            {% if income == "['1']" %}
+                <button class="morePrograms" onclick="location.href='https://www.fcgov.com/rebate/#:~:text=The%20rebate%20program%20runs%20from,%2C%20age%2C%20and%20disability%20status.'"> Grocery Rebate Program </button>
+                <button class="morePrograms" onclick="location.href='https://www.fcgov.com/utilities/manage-your-account/payment-options/utilities-affordability-portfolio/'"> Utilities Program </button>
+                <button class="morePrograms" onclick="location.href='https://www.fcgov.com/utilities/rebates'"> Residential Rebate Program </button>
+                <button class="morePrograms" onclick="location.href='https://programs.dsireusa.org/system/program/detail/4115'"> Home Efficiency Program </button>
+            {% elif income == "['2']" %}
+                <button class="morePrograms" onclick="location.href='https://www.fcgov.com/rebate/#:~:text=The%20rebate%20program%20runs%20from,%2C%20age%2C%20and%20disability%20status.'"> Grocery Rebate Program </button>
+                <button class="morePrograms" onclick="location.href='https://www.fcgov.com/utilities/manage-your-account/payment-options/utilities-affordability-portfolio/'"> Utilities Program </button>
+            {% elif income == "['3']" %}
+                <button class="morePrograms" onclick="location.href='https://www.fcgov.com/rebate/#:~:text=The%20rebate%20program%20runs%20from,%2C%20age%2C%20and%20disability%20status.'"> Grocery Rebate Program </button>
+            {% else %}
+                <h5> Unfortunately, you are not qualified for any additional programs.</h5>
+            {% endif %}
+        </div>
+        <div class="homepage">
+            <img src="{% static 'users/images/logo-ft-collins-connexion.png' %}" alt="City of Fort Collins" width=65% style="display:block; margin-left: auto;margin-right: auto; ">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

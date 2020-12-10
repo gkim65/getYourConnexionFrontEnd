@@ -1,0 +1,15 @@
+{% extends "application/layout.html" %}
+
+{% block body %}
+
+<div class="question">
+    <h4>Congratulations on submitting your application to Digital Equity!</h4>
+
+    <h5> We will be looking over all applications on a rolling basis. </h5>
+
+    <h5> In the meantime, please visit your homepage to check if you are eligible for any other rebate program applications in the City of Fort Collins!</h5>
+
+    <button class="register" onclick="location.href='{% url 'users:homepage' %}'"> Return to Homepage </button>
+</div>
+
+{% endblock %}
