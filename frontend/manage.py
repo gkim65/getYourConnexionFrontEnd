@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # cd into frontend >> then run: python manage.py runserver
+# if django isnt runing close terminal and open it up again
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
